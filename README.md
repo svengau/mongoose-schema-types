@@ -1,0 +1,2 @@
+Mongoose Schema Types plugin
+############################
