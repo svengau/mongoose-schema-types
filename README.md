@@ -27,7 +27,7 @@ import mongoose from 'mongoose';
 import 'mongoose-schema-types';
 
 const schema = new mongoose.Schema({
-    name: { type: String },
+    currency: { type: mongoose.Schema.Types.Currency },
     email: { type: mongoose.Schema.Types.EmailAddress },
     guid: { type: mongoose.Schema.Types.GUID },
     hsl: { type: mongoose.Schema.Types.HSL },
@@ -54,6 +54,10 @@ const schema = new mongoose.Schema({
 Many mongoose type plugins exist on npm, but most of them only handle one type. And some of them are not linked to any git repo.
 
 ## The Types
+
+### Currency
+
+A field whose value is a [ISO-4217 currency](https://en.wikipedia.org/wiki/ISO_4217) (case insensitive).
 
 ### UtcOffset
 

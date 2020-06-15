@@ -3,6 +3,9 @@ import * as mongoose from "mongoose";
 declare module "mongoose" {
   namespace Schema {
     namespace Types {
+      class Currency extends mongoose.SchemaType {
+        constructor(key: string, options?: any);
+      }
       class EmailAddress extends mongoose.SchemaType {
         constructor(key: string, options?: any);
       }

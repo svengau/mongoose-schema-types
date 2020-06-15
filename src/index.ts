@@ -1,3 +1,4 @@
+const Currency = require("./Currency");
 const EmailAddress = require("./EmailAddress");
 const GUID = require("./GUID");
 const HSL = require("./HSL");
@@ -18,6 +19,7 @@ const Url = require("./Url");
 const UtcOffset = require("./UtcOffset");
 
 module.exports = {
+  Currency,
   EmailAddress,
   GUID,
   HSL,
