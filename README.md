@@ -248,6 +248,10 @@ Released under the [MIT license](./LICENSE.md).
 
 Issues and Pull Requests are always welcome.
 
+## Sponsor
+
+- [Fullstack Rocket](http://www.fullstackrocket.com/)
+
 ## Thanks
 
 Thanks to the awesome [graphql-scalars](https://github.com/Urigo/graphql-scalars) library for all the hard work done. All validators and associated documentation come from this lib.
