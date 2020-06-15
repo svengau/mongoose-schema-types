@@ -6,7 +6,7 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "engines": {
-    "node": ">= 4.0.0"
+    "node": "14.4.0"
   },
   "scripts": {
     "prepublishOnly": "yarn build",
@@ -37,13 +37,13 @@
     "url": "https://github.com/svengau/mongoose-schema-types/issues"
   },
   "devDependencies": {
-    "@types/mongoose": "5.x",
-    "jest": "^26.0.1",
-    "mongoose": "5.x",
+    "@types/mongoose": "5.7.23",
+    "jest": "26.0.1",
+    "mongoose": "5.9.18",
     "typescript": "3.9.5",
     "typescript-eslint-parser": "22.0.0"
   },
   "peerDependencies": {
-    "mongoose": ">=5.x"
+    "mongoose": "5.9.18"
   }
 }
