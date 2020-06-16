@@ -5,15 +5,24 @@ const validate = (value: any) => {
   const parsed = typeof value === "string" ? parseInt(value, 10) : value;
 
   if (typeof parsed !== "number" || Number.isNaN(parsed)) {
-    throw new TypeError(`Value is not a number: ${value}`);
+    throw mongoose.SchemaType.CastError(
+      "Port",
+      `Value is not a number: ${value}`
+    );
   }
 
   if (parsed === Infinity || parsed === -Infinity) {
-    throw new TypeError(`Value is not a finite number: ${value}`);
+    throw mongoose.SchemaType.CastError(
+      "Port",
+      `Value is not a finite number: ${value}`
+    );
   }
 
   if (parsed <= 0 || parsed > 65535) {
-    throw new TypeError(`Value is not a valid TCP port: ${value}`);
+    throw mongoose.SchemaType.CastError(
+      "Port",
+      `Value is not a valid TCP port: ${value}`
+    );
   }
 
   return parsed;

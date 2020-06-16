@@ -5,11 +5,17 @@ const RGBA_REGEX = /^rgba\(\s*(-?\d+|-?\d*\.\d+(?=%))(%?)\s*,\s*(-?\d+|-?\d*\.\d
 
 const validate = (value: any) => {
   if (typeof value !== "string") {
-    throw new TypeError(`Value is not string: ${value}`);
+    throw mongoose.SchemaType.CastError(
+      "RGBA",
+      `Value is not string: ${value}`
+    );
   }
 
   if (!RGBA_REGEX.test(value)) {
-    throw new TypeError(`Value is not a valid RGBA color: ${value}`);
+    throw mongoose.SchemaType.CastError(
+      "RGBA",
+      `Value is not a valid RGBA color: ${value}`
+    );
   }
 
   return value;

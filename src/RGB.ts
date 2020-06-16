@@ -5,11 +5,14 @@ const RGB_REGEX = /^rgb\(\s*(-?\d+|-?\d*\.\d+(?=%))(%?)\s*,\s*(-?\d+|-?\d*\.\d+(
 
 const validate = (value: any) => {
   if (typeof value !== "string") {
-    throw new TypeError(`Value is not string: ${value}`);
+    throw mongoose.SchemaType.CastError("RGB", `Value is not string: ${value}`);
   }
 
   if (!RGB_REGEX.test(value)) {
-    throw new TypeError(`Value is not a valid RGB color: ${value}`);
+    throw mongoose.SchemaType.CastError(
+      "RGB",
+      `Value is not a valid RGB color: ${value}`
+    );
   }
 
   return value;

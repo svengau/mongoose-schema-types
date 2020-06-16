@@ -5,11 +5,17 @@ const validate = (value: any) => {
   const EMAIL_ADDRESS_REGEX = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
   if (typeof value !== "string") {
-    throw new TypeError(`Value is not string: ${value}`);
+    throw mongoose.SchemaType.CastError(
+      "EmailAddress",
+      `Value is not string: ${value}`
+    );
   }
 
   if (!EMAIL_ADDRESS_REGEX.test(value)) {
-    throw new TypeError(`Value is not a valid email address: ${value}`);
+    throw mongoose.SchemaType.CastError(
+      "EmailAddress",
+      `Value is not a valid email address: ${value}`
+    );
   }
 
   return value;

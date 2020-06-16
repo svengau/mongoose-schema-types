@@ -70,11 +70,17 @@ function _testPostalCode(postalCode: string) {
 
 const validate = (value: any) => {
   if (typeof value !== "string") {
-    throw new TypeError(`Value is not string: ${value}`);
+    throw mongoose.SchemaType.CastError(
+      "PostalCode",
+      `Value is not string: ${value}`
+    );
   }
 
   if (!_testPostalCode(value)) {
-    throw new TypeError(`Value is not a valid postal code: ${value}`);
+    throw mongoose.SchemaType.CastError(
+      "PostalCode",
+      `Value is not a valid postal code: ${value}`
+    );
   }
 
   return value;

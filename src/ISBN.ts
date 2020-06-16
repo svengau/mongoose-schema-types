@@ -8,7 +8,10 @@ const ISBN_REGEX_ARR = [
 
 const validate = (value: any) => {
   if (typeof value !== "string") {
-    throw new TypeError(`Value is not string: ${value}`);
+    throw mongoose.SchemaType.CastError(
+      "ISBN",
+      `Value is not string: ${value}`
+    );
   }
 
   let valid = false;
@@ -20,7 +23,10 @@ const validate = (value: any) => {
   }
 
   if (!valid) {
-    throw new TypeError(`Value is not a valid ISBN number: ${value}`);
+    throw mongoose.SchemaType.CastError(
+      "ISBN",
+      `Value is not a valid ISBN number: ${value}`
+    );
   }
 
   return value;

@@ -5,11 +5,17 @@ const IPV4_REGEX = /^(?:(?:(?:0?0?[0-9]|0?[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[
 
 const validate = (value: any) => {
   if (typeof value !== "string") {
-    throw new TypeError(`Value is not string: ${value}`);
+    throw mongoose.SchemaType.CastError(
+      "IPv4",
+      `Value is not string: ${value}`
+    );
   }
 
   if (!IPV4_REGEX.test(value)) {
-    throw new TypeError(`Value is not a valid IPv4 address: ${value}`);
+    throw mongoose.SchemaType.CastError(
+      "IPv4",
+      `Value is not a valid IPv4 address: ${value}`
+    );
   }
 
   return value;

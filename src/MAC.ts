@@ -5,11 +5,14 @@ const MAC_REGEX = /^(?:[0-9A-Fa-f]{2}([:-]?)[0-9A-Fa-f]{2})(?:(?:\1|\.)(?:[0-9A-
 
 const validate = (value: any) => {
   if (typeof value !== "string") {
-    throw new TypeError(`Value is not string: ${value}`);
+    throw mongoose.SchemaType.CastError("MAC", `Value is not string: ${value}`);
   }
 
   if (!MAC_REGEX.test(value)) {
-    throw new TypeError(`Value is not a valid MAC address: ${value}`);
+    throw mongoose.SchemaType.CastError(
+      "MAC",
+      `Value is not a valid MAC address: ${value}`
+    );
   }
 
   return value;

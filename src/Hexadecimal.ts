@@ -5,11 +5,17 @@ const validate = (value: any) => {
   const HEXADECIMAL_REGEX = /^[a-f0-9]+$/i;
 
   if (typeof value !== "string") {
-    throw new TypeError(`Value is not string: ${value}`);
+    throw mongoose.SchemaType.CastError(
+      "Hexadecimal",
+      `Value is not string: ${value}`
+    );
   }
 
   if (!HEXADECIMAL_REGEX.test(value)) {
-    throw new TypeError(`Value is not a valid hexadecimal value: ${value}`);
+    throw mongoose.SchemaType.CastError(
+      "Hexadecimal",
+      `Value is not a valid hexadecimal value: ${value}`
+    );
   }
 
   return value;

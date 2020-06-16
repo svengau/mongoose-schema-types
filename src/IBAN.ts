@@ -403,7 +403,10 @@ class IBAN extends mongoose.SchemaType {
 
   cast(val: any) {
     if (!validate(val)) {
-      throw new TypeError(`Value is not a valid IBAN: ${val}`);
+      throw mongoose.SchemaType.CastError(
+        "IBAN",
+        `Value is not a valid IBAN: ${val}`
+      );
     }
     return val;
   }

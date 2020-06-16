@@ -5,7 +5,10 @@ const validate = (value: any) => {
   const GUID_REGEX = /^(\{){0,1}[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}(\}){0,1}$/gi;
 
   if (typeof value !== "string") {
-    throw new TypeError(`Value is not string: ${value}`);
+    throw mongoose.SchemaType.CastError(
+      "GUID",
+      `Value is not string: ${value}`
+    );
   }
 
   if (value.startsWith("{")) {
@@ -13,7 +16,10 @@ const validate = (value: any) => {
   }
 
   if (!GUID_REGEX.test(value)) {
-    throw new TypeError(`Value is not a valid GUID: ${value}`);
+    throw mongoose.SchemaType.CastError(
+      "GUID",
+      `Value is not a valid GUID: ${value}`
+    );
   }
 
   return value;

@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 
 const validate = (value: any) => {
   if (typeof value !== "string") {
-    throw new TypeError(`Value is not string: ${value}`);
+    throw mongoose.SchemaType.CastError("Url", `Value is not string: ${value}`);
   }
   // new URL will throw an Error if value is not a valid url
   new URL(value);

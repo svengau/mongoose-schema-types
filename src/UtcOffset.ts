@@ -5,11 +5,17 @@ const validate = (value: any) => {
   const UTC_OFFSET_REGEX = /^([+-]?)(\d{2}):(\d{2})$/;
 
   if (typeof value !== "string") {
-    throw new TypeError(`Value is not string: ${value}`);
+    throw mongoose.SchemaType.CastError(
+      "UtcOffset",
+      `Value is not string: ${value}`
+    );
   }
 
   if (!UTC_OFFSET_REGEX.test(value)) {
-    throw new TypeError(`Value is not a valid UTC Offset: ${value}`);
+    throw mongoose.SchemaType.CastError(
+      "UtcOffset",
+      `Value is not a valid UTC Offset: ${value}`
+    );
   }
 
   return value;

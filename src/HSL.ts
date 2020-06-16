@@ -5,11 +5,14 @@ const validate = (value: any) => {
   const HSL_REGEX = /^hsl\(\s*(-?\d+|-?\d*.\d+)\s*,\s*(-?\d+|-?\d*.\d+)%\s*,\s*(-?\d+|-?\d*.\d+)%\s*\)$/;
 
   if (typeof value !== "string") {
-    throw new TypeError(`Value is not string: ${value}`);
+    throw mongoose.SchemaType.CastError("HSL", `Value is not string: ${value}`);
   }
 
   if (!HSL_REGEX.test(value)) {
-    throw new TypeError(`Value is not a valid HSL color: ${value}`);
+    throw mongoose.SchemaType.CastError(
+      "HSL",
+      `Value is not a valid HSL color: ${value}`
+    );
   }
 
   return value;

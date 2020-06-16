@@ -5,11 +5,17 @@ const HSLA_REGEX = /^hsla\(\s*(-?\d+|-?\d*.\d+)\s*,\s*(-?\d+|-?\d*.\d+)%\s*,\s*(
 
 const validate = (value: any) => {
   if (typeof value !== "string") {
-    throw new TypeError(`Value is not string: ${value}`);
+    throw mongoose.SchemaType.CastError(
+      "HSLA",
+      `Value is not string: ${value}`
+    );
   }
 
   if (!HSLA_REGEX.test(value)) {
-    throw new TypeError(`Value is not a valid HSLA color: ${value}`);
+    throw mongoose.SchemaType.CastError(
+      "HSLA",
+      `Value is not a valid HSLA color: ${value}`
+    );
   }
 
   return value;

@@ -5,11 +5,15 @@ const validate = (value: any) => {
   const PHONE_NUMBER_REGEX = /^\+[1-9]\d{1,14}$/;
 
   if (typeof value !== "string") {
-    throw new TypeError(`Value is not string: ${value}`);
+    throw mongoose.SchemaType.CastError(
+      "PhoneNumber",
+      `Value is not string: ${value}`
+    );
   }
 
   if (!PHONE_NUMBER_REGEX.test(value)) {
-    throw new TypeError(
+    throw mongoose.SchemaType.CastError(
+      "PhoneNumber",
       `Value is not a valid phone number of the form +17895551234 (10-15 digits): ${value}`
     );
   }
