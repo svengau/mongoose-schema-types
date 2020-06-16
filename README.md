@@ -6,7 +6,7 @@
 
 This mongoose types library is a port of the awesome [graphql-scalars](https://github.com/Urigo/graphql-scalars) libraries:
 
-`EmailAddress` `GUID` `HSL` `HSLA` `HexColorCode` `Hexadecimal` `IBAN` `IPv4` `IPv6` `ISBN` `MAC` `PhoneNumber` `Port` `PostalCode` `RGB` `RGBA` `Url` `UtcOffset`
+`Currency` `EmailAddress` `GUID` `HSL` `HSLA` `HexColorCode` `Hexadecimal` `IBAN` `Int32` `IPv4` `IPv6` `ISBN` `MAC` `PhoneNumber` `Port` `PostalCode` `RGB` `RGBA` `Url` `UtcOffset`
 
 ## Installation
 
@@ -35,6 +35,7 @@ const schema = new mongoose.Schema({
     hexcolorcode: { type: mongoose.Schema.Types.HexColorCode },
     hexadecimal: { type: mongoose.Schema.Types.Hexadecimal },
     iban: { type: mongoose.Schema.Types.IBAN },
+    int32: { type: mongoose.Schema.Types.Int32 },
     ipv4: { type: mongoose.Schema.Types.IPv4 },
     ipv6: { type: mongoose.Schema.Types.IPv6 },
     isbn: { type: mongoose.Schema.Types.ISBN },
@@ -114,6 +115,10 @@ A field whose value is a generic [Globally Unique Identifier](https://en.wikiped
 ### Hexadecimal
 
 A field whose value is a [hexadecimal](https://en.wikipedia.org/wiki/Hexadecimal).
+
+### Int32
+
+A field whose value is a [int32](http://bsonspec.org/spec.html). See also [wikipedia](https://en.wikipedia.org/wiki/32-bit_computing).
 
 ### HexColorCode
 

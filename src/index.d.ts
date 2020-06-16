@@ -27,6 +27,9 @@ declare module "mongoose" {
       class IBAN extends mongoose.SchemaType {
         constructor(key: string, options?: any);
       }
+      class Int32 extends mongoose.SchemaType {
+        constructor(key: string, options?: any);
+      }
       class IPv4 extends mongoose.SchemaType {
         constructor(key: string, options?: any);
       }

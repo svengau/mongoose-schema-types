@@ -6,6 +6,7 @@ const HSLA = require("./HSLA");
 const HexColorCode = require("./HexColorCode");
 const Hexadecimal = require("./Hexadecimal");
 const IBAN = require("./IBAN");
+const Int32 = require("./Int32");
 const IPv4 = require("./IPv4");
 const IPv6 = require("./IPv6");
 const ISBN = require("./ISBN");
@@ -26,6 +27,7 @@ module.exports = {
   HSLA,
   HexColorCode,
   Hexadecimal,
+  Int32,
   IBAN,
   IPv4,
   IPv6,
