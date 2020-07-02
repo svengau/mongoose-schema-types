@@ -1,2 +1,4 @@
 tsconfig.json
 renovate.json
+.vscode
+.history

@@ -1,6 +1,6 @@
 {
   "name": "mongoose-schema-types",
-  "version": "1.2.0",
+  "version": "1.2.6",
   "description": "A collection of mongoose types",
   "homepage": "https://github.com/svengau/mongoose-schema-types#readme",
   "main": "dist/index.js",
