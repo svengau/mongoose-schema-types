@@ -6,7 +6,7 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "engines": {
-    "node": ">=10.x"
+    "node": "16.3.0"
   },
   "scripts": {
     "prepublishOnly": "yarn build",
