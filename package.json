@@ -37,13 +37,13 @@
     "url": "https://github.com/svengau/mongoose-schema-types/issues"
   },
   "devDependencies": {
-    "@types/mongoose": "5.7.23",
+    "@types/mongoose": "5.11.96",
     "jest": "26.0.1",
-    "mongoose": "5.9.18",
+    "mongoose": "5.12.14",
     "typescript": "3.9.5",
     "typescript-eslint-parser": "22.0.0"
   },
   "peerDependencies": {
-    "mongoose": "5.9.18"
+    "mongoose": "5.12.14"
   }
 }
