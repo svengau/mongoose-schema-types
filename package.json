@@ -39,11 +39,11 @@
   "devDependencies": {
     "@types/mongoose": "5.7.23",
     "jest": "26.0.1",
-    "mongoose": "5.9.18",
+    "mongoose": "5.13.20",
     "typescript": "3.9.5",
     "typescript-eslint-parser": "22.0.0"
   },
   "peerDependencies": {
-    "mongoose": "5.9.18"
+    "mongoose": "5.13.20"
   }
 }
